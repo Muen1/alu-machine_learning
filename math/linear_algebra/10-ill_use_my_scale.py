@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
-import numpy as np
+"""
+Calculate the shape of an Ndarray
+"""
+
+
 def np_shape(matrix):
-    return matrix.shape
+    """
+    Calculate the shape of an Ndarray
+    """
+    return tuple(matrix.shape)
