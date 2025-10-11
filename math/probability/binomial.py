@@ -80,4 +80,3 @@ class Binomial:
             summation += self.pmf(i)
         cdf = summation
         return cdf
-
