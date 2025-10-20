@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Function that calculates the mean and covariance of a dataset"""
 
+
 import numpy as np
 
 
@@ -17,13 +18,7 @@ def mean_cov(X):
     """
 
     # Check if X is a 2D numpy.ndarray
-    if not isinstance(X, np.ndarray):
-        raise TypeError("X must be a 2D numpy.ndarray")
-    
-    # Handle 1D arrays by reshaping them to 2D
-    if len(X.shape) == 1:
-        X = X.reshape(-1, 1)
-    elif len(X.shape) != 2:
+    if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         raise TypeError("X must be a 2D numpy.ndarray")
 
     n, d = X.shape
@@ -41,3 +36,12 @@ def mean_cov(X):
 
     return mean, cov
 
+
+# # If you'd like to test the function:
+# if __name__ == '__main__':
+#     np.random.seed(0)
+#     X = np.random.multivariate_normal(
+#         [12, 30, 10], [[36, -30, 15], [-30, 100, -20], [15, -20, 25]], 10000)
+#     mean, cov = mean_cov(X)
+#     print(mean)
+#     print(cov)
